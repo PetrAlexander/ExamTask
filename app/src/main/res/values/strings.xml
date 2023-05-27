@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ExamTask</string>
+    <string name="input_movie_name">Введите название фильма</string>
+    <string name="add_movie">Add movie</string>
+</resources>
