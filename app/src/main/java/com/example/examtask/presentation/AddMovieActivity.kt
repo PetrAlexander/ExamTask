@@ -13,16 +13,18 @@ class AddMovieActivity : AppCompatActivity() {
 
     lateinit var etInputMovie: EditText
     lateinit var btnAddMovie: FloatingActionButton
-    lateinit var viewModel: MainViewModel
+    lateinit var addMovieViewModel: AddMovieViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_movie)
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        addMovieViewModel = ViewModelProvider(this)[AddMovieViewModel::class.java]
         initViews()
         btnAddMovie.setOnClickListener {
             val movieTitle = etInputMovie.text.toString()
-            viewModel.addMovie(movieTitle)
+            addMovieViewModel.addMovie(movieTitle)
+        }
+        addMovieViewModel.shouldCloseScreen.observe(this) {
             finish()
         }
     }

@@ -30,6 +30,26 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    override fun onStart() {
+        super.onStart()
+        viewModel.getMovies()
+    }
+
+//    override fun onStop() {
+//        super.onStop()
+//        viewModel.getMovies()
+//    }
+//
+//    override fun onRestart() {
+//        super.onRestart()
+//        viewModel.getMovies()
+//    }
+//
+//    override fun onResume() {
+//        super.onResume()
+//        viewModel.getMovies()
+//    }
     private fun initViews() {
         rvMovies = findViewById(R.id.rv_movies)
         btnAddMovie = findViewById(R.id.btnAddMovie)
